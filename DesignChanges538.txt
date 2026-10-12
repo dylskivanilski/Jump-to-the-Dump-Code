@@ -1,0 +1,76 @@
+A Hop, Skip, and a Jump to the Dump!
+Dylan Fermo - CS-583-03 - Professor Houston
+Changes From the Design Document
+=====================================================
+
+CONTROLS (final)
+- A/D: walk left/right (only while on the ground)
+- Space: hold to charge a jump, release to jump (auto-jumps at full charge)
+- A/D held while releasing Space: aims the jump left or right
+- Esc: pause / resume
+- Mouse: click menu buttons
+
+-----------------------------------------------------
+1. LEVEL STRUCTURE
+Proposal: Unsure whether to make 1-3 levels.
+Final: One continuous vertical level about 4 screens tall. The first section is a
+beginner area with wide platforms and short gaps; the upper section has narrower
+platforms and longer drops. Difficulty scales with height, as planned, without
+needing multiple levels.
+
+2. CHECKPOINTS
+Proposal: Checkpoint flags (maybe).
+Final: Since the game has no deaths or respawning (like Jump King), a normal
+respawn checkpoint didn't fit. Instead, once the player clears the beginner
+section, a "safety floor" closes underneath them with a bell sound. After that,
+a bad fall can only drop the player to that floor, never all the way back to the
+start. This keeps the lose-progress risk/reward from the proposal while keeping
+the game fair.
+
+3. OBSTACLES
+Proposal: Obstacles (unspecified).
+Final: Added a bouncy tire stack that launches the player upward when they land on
+it. It can act as a shortcut if used well, or throw the player somewhere bad if
+used carelessly.
+
+4. JUMP MECHANIC DETAILS
+Added several details that weren't in the proposal:
+- No air control: once you jump, you're committed. This makes every jump a decision.
+- The jump fires automatically at full charge, so the player can't hold forever.
+- Wall bounce: hitting a wall mid-air bounces the player back off it.
+- The player sprite squashes down while charging, like a spring, so the player can
+  see the charge.
+
+5. FALLING CONSEQUENCE
+Proposal: Falling loses progress.
+Final: Falling a long distance also briefly stuns the player and plays a "splat"
+sound, so a big fall feels like a real setback.
+
+6. UI ADDITIONS
+- Charge meter that fills and changes from green to red as the jump charges.
+- Height display showing current height and best height reached. Seeing your best
+  height after a fall gives the player a reason to keep climbing.
+- Victory screen showing total time and number of big falls, with Play Again and
+  Main Menu buttons.
+- Pause menu with Resume, Restart, and Main Menu buttons.
+
+7. AUDIO
+Proposal: Landing, falling, jumping, victory, background music (maybe), optional
+environment sounds.
+Final: Jump, land, big-fall splat, wall bump, tire bounce, checkpoint bell, pause,
+and victory sounds. Sounds are played with slight random pitch variation so repeated
+jumps don't sound robotic. Background music and ambient sounds were cut: the game is
+about focus and precise timing, and the gameplay sounds give the important feedback.
+
+8. ART
+Final: Uses a junkyard tileset and worker character sprite. The dump at the top is
+built from trash pile pieces, barrels, tires, and hazard signs instead of a single
+goal object.
+
+CUT FROM SCOPE
+- Multiple levels
+- Background music and ambient environment sounds
+
+ASSET CREDITS
+- Trashville junkyard tileset and worker sprite (free asset pack)
+- Sound effects: Kenney.nl (CC0)
